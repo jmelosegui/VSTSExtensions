@@ -1,0 +1,58 @@
+{
+  "id": "909AE5E1-2879-4641-BFCD-6BCEEEF6601A",
+  "name": "ReplaceTokens",
+  "friendlyName": "Replace tokens in file",
+  "description": "Replaces tokens in files with TFS environment variables.",
+  "author": "jmelosegui",
+  "category": "Deploy",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 34
+  },
+  "minimumAgentVersion": "1.95.3",
+  "instanceNameFormat": "Replace tokens",
+  "inputs": [
+    {
+      "name": "SourcePath",
+      "type": "filePath",
+      "label": "Source Path",
+      "defaultValue": "",
+      "helpMarkDown": "The source folder that contains the files containing the tokens.",
+      "required": true
+    },
+    {
+        "name": "Contents",
+        "type": "multiLine",
+        "label": "Contents",
+        "defaultValue": "**",
+        "required": true,
+        "helpMarkDown": "File paths to include as part of the copy. Supports multiple lines of minimatch patterns. [More Information](https://go.microsoft.com/fwlink/?LinkID=708389)"
+    },
+    {
+      "name": "DestinationPath",
+      "type": "string",
+      "label": "Destination Path",
+      "defaultValue": "",
+      "helpMarkDown": "If empty, files in the source path will be updated replacing the token with the environment variables, if not the source file with be replace and rename with destination value",
+      "required": false
+    },
+    {
+      "name": "TokenRegex",
+      "type": "string",
+      "label": "Token Regex",
+      "defaultValue": "__([\\w.]+)__",
+      "helpMarkDown": "Regular expression to use for token replacement.",
+      "required": false      
+    }    
+  ],
+  "execution": {
+    "Powershell3": {
+      "target": "ReplaceTokens.ps1"
+    }
+  }
+}

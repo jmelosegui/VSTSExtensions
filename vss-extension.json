@@ -1,0 +1,58 @@
+{
+    "manifestVersion": 1,
+    "id": "vsts-extensions",
+    "version": "1.0.0",
+    "name": "JMElosegui VSTS Extensions",
+    "publisher": "jmelosegui",
+    "description": "Common tasks for build and deploy applications using TFS or VSTS release management.",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "images/toolbox.png"
+    },
+    "scopes": [],
+    "categories": [
+        "Build and release"
+    ],
+    "content": {
+        "details": {
+            "path": "readme.md"
+        }
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/jmelosegui/VSTSExtensions/blob/master/README.md"
+        },
+        "issues": {
+            "uri": "https://github.com/jmelosegui/VSTSExtensions/issues"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/jmelosegui/VSTSExtensions"
+    },
+    "contributions": [
+        {
+            "id": "jmelosegui-replace-tokens",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+              "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+              "name": "ReplaceTokens"
+            }
+        }
+    ],
+    "files": [
+        {
+          "path": "ReplaceTokens"
+        },
+        {
+            "path": "images",
+            "addressable": true
+        }
+    ]
+}
