@@ -24,15 +24,15 @@
     },
     "links": {
         "getstarted": {
-            "uri": "https://github.com/jmelosegui/VSTSExtensions/blob/master/README.md"
+            "uri": "https://github.com/jmelosegui/vsts-extensions/blob/master/README.md"
         },
         "issues": {
-            "uri": "https://github.com/jmelosegui/VSTSExtensions/issues"
+            "uri": "https://github.com/jmelosegui/vsts-extensions/issues"
         }
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/jmelosegui/VSTSExtensions"
+        "uri": "https://github.com/jmelosegui/vsts-extensions"
     },
     "contributions": [
         {
