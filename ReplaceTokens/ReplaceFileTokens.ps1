@@ -1,6 +1,6 @@
 function Replace-Tokens {
 	[CmdletBinding()]
-	param(
+	param(		
 		[Parameter(Mandatory=$true)]
 		[string]$SourcePath,
 		[Parameter()]
@@ -8,6 +8,9 @@ function Replace-Tokens {
 		[Parameter()]
 		[string]$TokenRegex
 	)
+
+	Set-StrictMode -Version Latest
+	$ErrorActionPreference = "Stop"
 
 	Write-Verbose "Validate that SourcePath is a valid path: $SourcePath" -Verbose
 	if (!(Test-Path -Path $SourcePath)) {
@@ -50,9 +53,9 @@ function Replace-Tokens {
         $result
     }
 
-	Write-Host " "
-	Write-Host "Replacing tokens in file '$SourcePath'"
-	Write-Host "Generating file '$DestinationPath'."
+	Write-Output " "
+	Write-Output "Replacing tokens in file '$SourcePath'"
+	Write-Output "Generating file '$DestinationPath'."
 
 	$inputContent = Get-Content $SourcePath;
 	$inputContent | ForEach-Object { 
@@ -78,7 +81,7 @@ function Replace-Tokens {
                 }
             }		
 		}
-		$line
+		return $line
 	} | Set-Content -Path $DestinationPath
 
 	if( $deleteSourceFile -eq $true) {
@@ -86,5 +89,5 @@ function Replace-Tokens {
 		Remove-Item -Path $SourcePath
 	}	
 
-	Write-Host "Finished replacing tokens."
+	Write-Output "Finished replacing tokens."
 }

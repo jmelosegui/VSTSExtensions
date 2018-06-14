@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "vsts-extensions",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "name": "JMElosegui VSTS Extensions",
     "publisher": "jmelosegui",
     "description": "Common tasks for build and deploy applications using TFS or VSTS release management.",

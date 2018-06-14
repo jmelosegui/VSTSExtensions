@@ -2,7 +2,8 @@
   "id": "909AE5E1-2879-4641-BFCD-6BCEEEF6601A",
   "name": "ReplaceTokens",
   "friendlyName": "Replace tokens in file",
-  "description": "Replaces tokens in files with TFS environment variables.",
+  "description": "Replace tokens in file",
+  "helpMarkDown": "Replaces tokens in files with TFS/VSTS environment variables using regular expressions.",
   "author": "jmelosegui",
   "category": "Deploy",
   "visibility": [
@@ -12,7 +13,7 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 34
+    "Patch": 4
   },
   "minimumAgentVersion": "1.95.3",
   "instanceNameFormat": "Replace tokens",
@@ -38,7 +39,7 @@
       "type": "string",
       "label": "Destination Path",
       "defaultValue": "",
-      "helpMarkDown": "If empty, files in the source path will be updated replacing the token with the environment variables, if not the source file with be replace and rename with destination value",
+      "helpMarkDown": "If empty, files in the source path will be updated replacing the tokens with the environment variables, if not the source files will be moved to the destination folder and then the tokens will be replaced with the environment variables.",
       "required": false
     },
     {
